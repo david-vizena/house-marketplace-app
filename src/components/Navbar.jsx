@@ -40,7 +40,7 @@ function Navbar() {
 						/>
 						<p
 							className={
-								pathMatchRoute('/offers')
+								pathMatchRoute('/offer')
 									? 'navbarListItemNameActive'
 									: 'navbarListItemName'
 							}>
@@ -67,4 +67,5 @@ function Navbar() {
 		</footer>
 	);
 }
+
 export default Navbar;

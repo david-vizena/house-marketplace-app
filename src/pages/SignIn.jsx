@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
-import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg';
-import visibilityIcon from '../assets/svg/visibilityIcon.svg';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import OAuth from '../components/OAuth';
+import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg';
+import visibilityIcon from '../assets/svg/visibilityIcon.svg';
 
 function SignIn() {
 	const [showPassword, setShowPassword] = useState(false);
@@ -13,6 +13,7 @@ function SignIn() {
 		password: '',
 	});
 	const { email, password } = formData;
+
 	const navigate = useNavigate();
 
 	const onChange = (e) => {
@@ -48,6 +49,7 @@ function SignIn() {
 				<header>
 					<p className='pageHeader'>Welcome Back!</p>
 				</header>
+
 				<form onSubmit={onSubmit}>
 					<input
 						type='email'
@@ -67,6 +69,7 @@ function SignIn() {
 							value={password}
 							onChange={onChange}
 						/>
+
 						<img
 							src={visibilityIcon}
 							alt='show password'
@@ -74,12 +77,13 @@ function SignIn() {
 							onClick={() => setShowPassword((prevState) => !prevState)}
 						/>
 					</div>
+
 					<Link to='/forgot-password' className='forgotPasswordLink'>
 						Forgot Password
 					</Link>
 
 					<div className='signInBar'>
-						<p className='signIntext'>Sign In</p>
+						<p className='signInText'>Sign In</p>
 						<button className='signInButton'>
 							<ArrowRightIcon fill='#ffffff' width='34px' height='34px' />
 						</button>
@@ -95,4 +99,5 @@ function SignIn() {
 		</>
 	);
 }
+
 export default SignIn;

@@ -21,10 +21,11 @@ function ForgotPassword() {
 	};
 
 	return (
-		<div className='page container'>
+		<div className='pageContainer'>
 			<header>
-				<p className='pageheader'>Forgot Password</p>
+				<p className='pageHeader'>Forgot Password</p>
 			</header>
+
 			<main>
 				<form onSubmit={onSubmit}>
 					<input
@@ -50,4 +51,5 @@ function ForgotPassword() {
 		</div>
 	);
 }
+
 export default ForgotPassword;
